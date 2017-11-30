@@ -1,22 +1,7 @@
 <div class="container">
-  
-        <div class="header">
-          <h1>Create Blog Post</h1>
-          <p class="lead">Create a blog post and share your thoughts!</p>
-        </div>
-        
-        <div class="form">
-          <div class="form-group">
-              <input type="text" class="form-control" id="PostTitle" placeholder="Title">
-          </div>
-          <div class="form-group">
-              <textarea class="form-control" rows="3" id="PostBody" placeholder="Body"></textarea>
-          </div>
-
-          <div class="form-group">
-              <button id="CreatePost" class="btn btn-default">Submit</button>
-          </div>
-      </div>
-
+        <a routerLink="/main">Blog List</a>
+        <a routerLink="/create">Create</a>
+      <router-outlet></router-outlet>
+      <!-- Routed views go here -->
 
 </div>
