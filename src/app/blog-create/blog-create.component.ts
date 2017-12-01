@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgModel} from '@angular/forms';
 import { PostsService } from '../posts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog-create',
@@ -12,16 +13,21 @@ export class BlogCreateComponent implements OnInit {
   title: string;
   body: string;
 
-  constructor(public postsService: PostsService) { }
+  constructor(public postsService: PostsService, private router: Router) { }
 
   ngOnInit() {
   }
 
 
   submitPost() {
-    this.postsService.createPost(this.title, this.body).then((data)=>{
-      console.log(data);
-    })
+    if(!this.title || !this.body){
+      console.log('Show validation here');
+    } else {
+      this.postsService.createPost(this.title, this.body).then((data)=>{
+        this.router.navigate(['main']);
+      });
+    }
+
   }
 
 }

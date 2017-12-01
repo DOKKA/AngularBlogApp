@@ -22,7 +22,7 @@ export class PostsService {
       this.httpClient.post('api/posts', {
         PostTitle: postTitle,
         PostBody: postBody
-      }).subscribe(data => {
+      },{responseType: 'text'}).subscribe(data => {
         resolve(data);
       });
     });
