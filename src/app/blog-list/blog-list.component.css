@@ -1,0 +1,6 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.grey-text{
+    color: #636363;
+    margin-top: 10px;
+}

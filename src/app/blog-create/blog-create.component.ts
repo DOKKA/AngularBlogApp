@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgModel} from '@angular/forms';
+import { PostsService } from '../posts.service';
 
 @Component({
   selector: 'app-blog-create',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogCreateComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+  body: string;
+
+  constructor(public postsService: PostsService) { }
 
   ngOnInit() {
+  }
+
+
+  submitPost() {
+    this.postsService.createPost(this.title, this.body).then((data)=>{
+      console.log(data);
+    })
   }
 
 }

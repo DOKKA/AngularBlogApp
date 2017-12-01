@@ -1,3 +1,16 @@
-<p>
-  blog-list works!
-</p>
+<h1>Recent Blog Posts</h1>
+<div class="blog-post" *ngFor="let post of this.postsService.results">
+  
+  <div class="row">
+      <div class="col-sm-8">
+          <h3 class="text-left">{{post.postTitle}}</h3>
+      </div>
+        <div class="col-sm-4 grey-text">
+            <span class="text-right">{{post.postDate | date:'longDate' }}</span>
+          <br>
+          <span>{{post.userName}}</span>
+        </div>
+        
+    </div>
+<p>{{post.postBody}}</p>
+</div>
